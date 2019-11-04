@@ -36,6 +36,8 @@ gem 'uglifier', '>= 2.7.1'
 gem 'jquery-rails'
 gem 'haml'
 gem 'protected_attributes'
+gem 'mixlib-authentication', '~> 3.0', '>= 3.0.4'
+gem 'resque-smtp', '~> 0.2.0'
 
 # Use unicorn as the web server
 # gem 'unicorn'

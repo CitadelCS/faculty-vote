@@ -2,13 +2,21 @@
 
 Initial Setup:
 ===============
-    bundle install
+    Make Sure The Following are Installed on Your Machine:
+    
+    gem install mixlib-authentication
+    
+    gem install resque-smtp
+    
+    bundle install (You may need to use bundler 1.9.9)
 
     rake db:migrate
 
     rake db:seed
  
     rake db:test:prepare
+    
+    
 
 Run on Local (Cloud9):
 ======================

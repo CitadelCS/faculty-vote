@@ -22,3 +22,6 @@ Run on Local (Cloud9):
 ======================
 
     rails s -p $PORT -b $IP
+
+
+AJ WAS HERE***

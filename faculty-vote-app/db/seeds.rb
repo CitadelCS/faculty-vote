@@ -5,16 +5,16 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-proposals = [{:name => 'Hire a new guy', :yes => '5', :no => '2', :abstain => '0', :dateofvote => '23-Feb-2019'},
-		    {:name => 'Give team A an A', :yes => '7', :no => '0', :abstain => '0', :dateofvote => '21-Mar-2019'},
-		    {:name => 'Give team B an F', :yes => '7', :no => '0', :abstain => '0', :dateofvote => '17-Apr-2019'},
-		    {:name => 'Pizza for lunch', :yes => '3', :no => '4', :abstain => '0', :dateofvote => '12-May-2019'},
-		    {:name => 'Make meetings shorter', :yes => '6', :no => '1', :abstain => '0', :dateofvote => '30-June-2019'},
-		    {:name => 'Eliminate meetings', :yes => '1', :no => '6', :abstain => '0', :dateofvote => '31-Jul-2019'},
-		    {:name => 'Offer more courses', :yes => '3', :no => '4', :abstain => '0', :dateofvote => '13-Aug-2019'},
-		    {:name => 'Increase salaries', :yes => '7', :no => '0', :abstain => '0', :dateofvote => '22-Sep-2019'},
-		    {:name => 'Make tests open-notes', :yes => '2', :no => '5', :abstain => '0', :dateofvote => '23-Oct-2019'},
-		    {:name => 'Hire new Department head', :yes => '0', :no => '7', :abstain => '0', :dateofvote => '16-Nov-2019'}
+proposals = [{:name => 'Hire a new guy', :yes => '5', :no => '2', :abstain => '0', :date => '23-Feb-2019'},
+		    {:name => 'Give team A an A', :yes => '7', :no => '0', :abstain => '0', :date => '21-Mar-2019'},
+		    {:name => 'Give team B an F', :yes => '7', :no => '0', :abstain => '0', :date => '17-Apr-2019'},
+		    {:name => 'Pizza for lunch', :yes => '3', :no => '4', :abstain => '0', :date => '12-May-2019'},
+		    {:name => 'Make meetings shorter', :yes => '6', :no => '1', :abstain => '0', :date => '30-June-2019'},
+		    {:name => 'Eliminate meetings', :yes => '1', :no => '6', :abstain => '0', :date => '31-Jul-2019'},
+		    {:name => 'Offer more courses', :yes => '3', :no => '4', :abstain => '0', :date => '13-Aug-2019'},
+		    {:name => 'Increase salaries', :yes => '7', :no => '0', :abstain => '0', :date => '22-Sep-2019'},
+		    {:name => 'Make tests open-notes', :yes => '2', :no => '5', :abstain => '0', :date => '23-Oct-2019'},
+		    {:name => 'Hire new Department head', :yes => '0', :no => '7', :abstain => '0', :date => '16-Nov-2019'}
 	 ]
 	 
 proposals.each do |proposal|

@@ -5,16 +5,16 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-proposals = [{:name => 'Hire a new guy', :yes => '5', :no => '2'},
-		    {:name => 'Give team A an A', :yes => '7', :no => '0'},
-		    {:name => 'Give team B an F', :yes => '7', :no => '0'},
-		    {:name => 'Pizza for lunch', :yes => '3', :no => '4'},
-		    {:name => 'Make meetings shorter', :yes => '6', :no => '1'},
-		    {:name => 'Eliminate meetings', :yes => '1', :no => '6'},
-		    {:name => 'Offer more courses', :yes => '3', :no => '4'},
-		    {:name => 'Increase salaries', :yes => '7', :no => '0'},
-		    {:name => 'Make tests open-notes', :yes => '2', :no => '5'},
-		    {:name => 'Hire new Department head', :yes => '0', :no => '7'}
+proposals = [{:name => 'Hire a new guy', :yes => '5', :no => '2', :abstain => '0'},
+		    {:name => 'Give team A an A', :yes => '7', :no => '0', :abstain => '0'},
+		    {:name => 'Give team B an F', :yes => '7', :no => '0', :abstain => '0'},
+		    {:name => 'Pizza for lunch', :yes => '3', :no => '4', :abstain => '0'},
+		    {:name => 'Make meetings shorter', :yes => '6', :no => '1', :abstain => '0'},
+		    {:name => 'Eliminate meetings', :yes => '1', :no => '6', :abstain => '0'},
+		    {:name => 'Offer more courses', :yes => '3', :no => '4', :abstain => '0'},
+		    {:name => 'Increase salaries', :yes => '7', :no => '0', :abstain => '0'},
+		    {:name => 'Make tests open-notes', :yes => '2', :no => '5', :abstain => '0'},
+		    {:name => 'Hire new Department head', :yes => '0', :no => '7', :abstain => '0'}
 	 ]
 	 
 proposals.each do |proposal|

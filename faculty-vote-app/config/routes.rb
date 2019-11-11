@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 #Faculty-vote-app::Application.routes.draw do
-    resources :proposals
+    resources :proposals, :authentication
     # map '/' to be a redirect to '/proposal'
-    root :to => redirect('/proposals')
+    root :to => redirect('/authentication')
+    
+    get 'signup', to: 'authentication#signup'
 end
 
   # The priority is based upon order of creation: first created -> highest priority.

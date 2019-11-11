@@ -119,6 +119,7 @@ GEM
     multi_test (0.1.2)
     nokogiri (1.10.5)
       mini_portile2 (~> 2.4.0)
+    pg (1.1.4)
     polyglot (0.3.5)
     protected_attributes (1.1.4)
       activemodel (>= 4.0.1, < 5.0)
@@ -248,6 +249,7 @@ DEPENDENCIES
   jquery-rails
   launchy
   mixlib-authentication (~> 3.0, >= 3.0.4)
+  pg
   protected_attributes
   pry
   pry-byebug

@@ -1,0 +1,28 @@
+!!!
+%html{:dir => "ltr", :lang => "en"}
+  %head
+    %title Sign Up
+  %body
+    .container
+      %h2 Sign Up
+      %form{:action => "/signup", :method => "POST"}
+        .form-group
+          %label{:for => "fname"} First Name:
+          %input#fname.form-control{:name => "fname", :placeholder => "Enter First Name", :required => "", :type => "text"}/
+        .form-group
+          %label{:for => "lname"} Last Name:
+          %input#lname.form-control{:name => "lname", :placeholder => "Enter Last Name", :required => "", :type => "text"}/
+        .form-group
+          %label{:for => "email"} Email:
+          %input#email.form-control{:name => "email", :placeholder => "someone@email.com", :required => "", :type => "email"}/
+        .form-group
+          %label{:for => "pwd"} Password:
+          %input#password.form-control{:name => "password", :placeholder => "Enter password", :required => "", :type => "password"}/
+        .form-group
+          %label{:for => "repwd"} Confirm Password:
+          %input#repasswd.form-control{:name => "repwd", :placeholder => "Retype password", :required => "", :type => "password"}/
+          %p#password-message
+        .form-group
+          %label{:for => "phone"} Phone Number:
+          %input#phone.form-control{:maxlength => "10", :minlength => "10", :name => "phone", :placeholder => "8881234567", :required => "", :type => "text"}/
+        %button#submitBtn.btn.btn-default{:type => "submit"} Submit

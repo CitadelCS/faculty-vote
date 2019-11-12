@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191112160127) do
+ActiveRecord::Schema.define(version: 20191112163635) do
 
   create_table "proposals", force: :cascade do |t|
     t.text     "name"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20191112160127) do
     t.string   "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "password"
   end
 
 end

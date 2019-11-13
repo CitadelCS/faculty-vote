@@ -10,12 +10,6 @@ class ProposalsController < ApplicationController
     @proposals = Proposal.order(ordering)
   end
   
-  def signup
-  end
-  
-  def show
-  end
-  
 #   -#  This file is app/views/proposals/open_proposals.html.haml
 # %h1  Open Proposals
 

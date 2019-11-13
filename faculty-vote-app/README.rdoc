@@ -26,9 +26,10 @@ Run on Local (Cloud9):
 ======================
 
     rails s -p $PORT -b $IP
-    
-Heroku Link:
-======================
-    https://mighty-sands-18138.herokuapp.com/ 
+
+Access on Heroku:
+=================
+    https://mighty-sands-18138.herokuapp.com/
+
 
 AJ WAS HERE***

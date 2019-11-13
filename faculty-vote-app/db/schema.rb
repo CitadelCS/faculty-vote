@@ -11,14 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191112163635) do
+ActiveRecord::Schema.define(version: 20191113165525) do
 
   create_table "proposals", force: :cascade do |t|
+    t.integer  "proposal_id"
     t.text     "name"
-    t.integer  "yes"
-    t.integer  "no"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text     "status"
+    t.text     "result"
+    t.integer  "number_votes"
+    t.integer  "number_yes"
+    t.integer  "number_no"
+    t.integer  "number_abstain"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "sessions", force: :cascade do |t|
@@ -32,12 +37,22 @@ ActiveRecord::Schema.define(version: 20191112163635) do
   add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at"
 
   create_table "users", force: :cascade do |t|
+    t.integer  "user_id"
     t.string   "first_name"
     t.string   "last_name"
     t.string   "email"
+    t.string   "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "password"
+  end
+
+  create_table "votes", force: :cascade do |t|
+    t.integer  "vote_id"
+    t.integer  "user_id"
+    t.integer  "proposal_id"
+    t.string   "vote_type"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
 end

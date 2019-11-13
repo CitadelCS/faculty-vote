@@ -33,3 +33,16 @@ users = [{:first_name => 'Matthew', :last_name => 'Blair', :email => 'mblair1@ci
 users.each do |user|
     User.create!(user)
 end
+
+votes = [{:user_id => 1, :proposal_id => 1, :vote_type => 'yes'},
+        {:user_id => 2, :proposal_id => 1, :vote_type => 'no'},
+        {:user_id => 3, :proposal_id => 1, :vote_type => 'abstain'},
+        {:user_id => 4, :proposal_id => 1, :vote_type => 'yes'},
+        {:user_id => 5, :proposal_id => 1, :vote_type => 'no'},
+		{:user_id => 6, :proposal_id => 1, :vote_type => 'yes'},
+		{:user_id => 7, :proposal_id => 1, :vote_type => 'yes'}
+	 ]
+	 
+votes.each do |vote|
+    Vote.create!(vote)
+end

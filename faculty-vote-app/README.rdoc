@@ -4,7 +4,7 @@ Initial Setup:
 ===============
     Make Sure The Following are Installed on Your Machine:
     
-    gem install mixlib-authentication
+    gem install activerecord-session_store
     
     gem install resque-smtp
     

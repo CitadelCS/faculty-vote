@@ -5,6 +5,9 @@ Rails.application.routes.draw do
     root :to => redirect('/authentication')
     
     get 'signup', to: 'authentication#signup'
+    post 'signup', to: 'authentication#signup_submit'
+    
+    
 end
 
   # The priority is based upon order of creation: first created -> highest priority.

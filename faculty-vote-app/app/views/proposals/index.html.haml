@@ -14,9 +14,9 @@
     - @proposals.each do |proposal|
       %tr
         %td= proposal.name 
-        %td= proposal.yes
-        %td= proposal.no
-        /%td= proposal.abstain
+        %td= proposal.number_yes
+        %td= proposal.number_no
+        %td= proposal.number_abstain
         %td= proposal.updated_at
         // %td= link_to "More about proposal.title}, proposal_path(proposal)
 

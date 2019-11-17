@@ -1,5 +1,5 @@
 -#  This file is app/views/proposals/open_proposals.html.haml
-%h1  Open Proposals
+%h1  Closed Proposals
 
 %table#movies
   %thead
@@ -9,16 +9,15 @@
       %th No
       %th Abstain
       %th Date
+      %th More
   %tbody
     - @proposals.each do |proposal|
       %tr
-        %td= proposal.name
+        %td= proposal.name 
         %td= proposal.number_yes
         %td= proposal.number_no
         %td= proposal.number_abstain
         %td= proposal.updated_at
-        
-  %br/
-      
-  %td= link_to "Create New", new_proposal_path
+        // %td= link_to "More about proposal.title}, proposal_path(proposal)
 
+/= link_to 'Add new proposal', new_movie_proposal

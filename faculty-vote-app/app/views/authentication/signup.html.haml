@@ -1,0 +1,30 @@
+%h2 Signup
+
+= form_tag signup_path do
+
+  = label :user, :first_name, 'First Name'
+  = text_field :first_name, 'First Name'
+  
+  %br/
+  
+  = label :user, :last_name, 'Last Name'
+  = text_field :last_name, 'Last Name'
+  
+  %br/
+  
+  = label :user, :email, 'Email'
+  = text_field :email, 'Email'
+  
+  %br/
+  
+  = label :user, :password, 'Password'
+  = text_field :password, 'Password'
+  
+  %br/
+  
+  = label :user, :confirm_password, 'Confirm Password'
+  = text_field :confirm_password, 'Confirm Password'
+
+  %br/
+
+  = submit_tag 'Submit', :class => 'btn btn-primary'

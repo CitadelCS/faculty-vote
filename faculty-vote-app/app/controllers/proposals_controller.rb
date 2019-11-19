@@ -1,4 +1,7 @@
 class ProposalsController < ApplicationController
+  def new_params
+    params.requires(:proposal).permit(:name)
+  end
   def index 
     sort = params[:sort] || session[:sort]
     case sort
@@ -8,6 +11,13 @@ class ProposalsController < ApplicationController
     end
     
     @proposals = Proposal.order(ordering)
+  end
+
+  def show
+  end
+  
+  def new
+    # default: render 'new' template
   end
   
   def new
@@ -26,25 +36,11 @@ class ProposalsController < ApplicationController
     @proposal.destroy
     redirect_to proposals_path
   end
-#   -#  This file is app/views/proposals/open_proposals.html.haml
-# %h1  Open Proposals
+  
+  def edit
+    @proposal = Proposal.find params[:id]
+  end
 
-# %table#movies
-#   %thead
-#     %tr
-#       %th Name 
-#       %th Yes
-#       %th No
-#       %th Abstain
-#       %th More
-#   %tbody
-#     - @proposals.each do |proposal|
-#       %tr
-#         %td= proposal.name 
-#         %td= proposal.yes
-#         %td= proposal.no
-#         %td= proposal.abstain
-#         %td= link_to "More about #{proposal.title}", proposal_path(proposal)
 
-# = link_to 'Add new proposal', new_movie_proposal
+
 end

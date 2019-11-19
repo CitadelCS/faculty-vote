@@ -22,6 +22,19 @@ Background: proposals have been added to database
   And  I am on the FacultyVote home page
   Then 10 seed proposals should exist
   
-  
+ #new proposal 
+Scenario: create new proposal 
+  Given I am on the homepage 
+  When I press 'new_proposal'
+  And I fill in the information 
+  And I click 'submit'
+  Then I should see that the proposal has been added 
+ 
+ #delete proposal 
+Scenario: delete a proposal 
+  When I delete a proposal 
+  And I am redirected to the homepage 
+  Then I should see all of the active proposals 
+  And I should not see the proposal I deleted 
  
  

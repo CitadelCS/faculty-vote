@@ -5,31 +5,46 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-proposals = [{:name => 'Hire a new guy', :yes => '5', :no => '2', :abstain => '0', :date => '23-Feb-2019'},
-		    {:name => 'Give team A an A', :yes => '7', :no => '0', :abstain => '0', :date => '21-Mar-2019'},
-		    {:name => 'Give team B an F', :yes => '7', :no => '0', :abstain => '0', :date => '17-Apr-2019'},
-		    {:name => 'Pizza for lunch', :yes => '3', :no => '4', :abstain => '0', :date => '12-May-2019'},
-		    {:name => 'Make meetings shorter', :yes => '6', :no => '1', :abstain => '0', :date => '30-June-2019'},
-		    {:name => 'Eliminate meetings', :yes => '1', :no => '6', :abstain => '0', :date => '31-Jul-2019'},
-		    {:name => 'Offer more courses', :yes => '3', :no => '4', :abstain => '0', :date => '13-Aug-2019'},
-		    {:name => 'Increase salaries', :yes => '7', :no => '0', :abstain => '0', :date => '22-Sep-2019'},
-		    {:name => 'Make tests open-notes', :yes => '2', :no => '5', :abstain => '0', :date => '23-Oct-2019'},
-		    {:name => 'Hire new Department head', :yes => '0', :no => '7', :abstain => '0', :date => '16-Nov-2019'}
+
+proposals = [{:name => 'Hire a new guy', :number_yes => '5', :number_no => '2'},
+		    {:name => 'Give team A an A', :number_yes => '7', :number_no => '0'},
+		    {:name => 'Give team B an F', :number_yes => '7', :number_no => '0'},
+		    {:name => 'Pizza for lunch', :number_yes => '3', :number_no => '4'},
+		    {:name => 'Make meetings shorter', :number_yes => '6', :number_no => '1'},
+		    {:name => 'Eliminate meetings', :number_yes => '1', :number_no => '6'},
+		    {:name => 'Offer more courses', :number_yes => '3', :number_no => '4'},
+		    {:name => 'Increase salaries', :number_yes => '7', :number_no => '0'},
+		    {:name => 'Make tests open-notes', :number_yes => '2', :number_no => '5'},
+		    {:name => 'Hire new Department head', :number_yes => '0', :number_no => '7'}
+
 	 ]
 	 
 proposals.each do |proposal|
     Proposal.create!(proposal)
 end
 
-users = [{:first_name => 'Matthew', :last_name => 'Blair', :email => 'mblair1@citadel.edu'},
-        {:first_name => 'Caitlin', :last_name => 'Cabrera', :email => 'ccabrera@citadel.edu'},
-        {:first_name => 'John-Anthony', :last_name => 'Thevos', :email => 'thevosjg@g.cofc.edu'},
-        {:first_name => 'Jared', :last_name => 'Mathews', :email => 'jmathew1@citadel.edu'},
-        {:first_name => 'Alexis', :last_name => 'Jackson', :email => 'jacksonaj1@g.cofc.edu'},
-		{:first_name => 'Michael', :last_name => 'Verdicchio', :email => 'mv@citadel.edu'},
-		{:first_name => 'Shankar', :last_name => 'Banik', :email => 'baniks1@citadel.edu'}
+users = [{:first_name => 'Matthew', :last_name => 'Blair', :email => 'mblair1@citadel.edu', :password => "one"},
+        {:first_name => 'Caitlin', :last_name => 'Cabrera', :email => 'ccabrera@citadel.edu', :password => "two"},
+        {:first_name => 'John-Anthony', :last_name => 'Thevos', :email => 'thevosjg@g.cofc.edu', :password => "three"},
+        {:first_name => 'Jared', :last_name => 'Mathews', :email => 'jmathew1@citadel.edu', :password => "four"},
+        {:first_name => 'Alexis', :last_name => 'Jackson', :email => 'jacksonaj1@g.cofc.edu', :password => "five"},
+		{:first_name => 'Michael', :last_name => 'Verdicchio', :email => 'mv@citadel.edu', :password => "six"},
+		{:first_name => 'Shankar', :last_name => 'Banik', :email => 'baniks1@citadel.edu', :password => "seven"}
 	 ]
 	 
 users.each do |user|
     User.create!(user)
+end
+
+votes = [{:user_id => 1, :proposal_id => 1, :vote_type => 'yes'},
+        {:user_id => 2, :proposal_id => 1, :vote_type => 'no'},
+        {:user_id => 3, :proposal_id => 1, :vote_type => 'abstain'},
+        {:user_id => 4, :proposal_id => 1, :vote_type => 'yes'},
+        {:user_id => 5, :proposal_id => 1, :vote_type => 'no'},
+		{:user_id => 6, :proposal_id => 1, :vote_type => 'yes'},
+		{:user_id => 7, :proposal_id => 1, :vote_type => 'yes'}
+	 ]
+	 
+votes.each do |vote|
+    Vote.create!(vote)
 end

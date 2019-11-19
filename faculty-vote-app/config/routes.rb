@@ -7,6 +7,9 @@ Rails.application.routes.draw do
     get 'signup', to: 'authentication#signup'
     post 'signup', to: 'authentication#signup_submit'
     
+    #get 'new_proposal', to: 'proposals#new'
+    #post 'new_proposal', to: 'proposals#new_submit'
+    post '/proposals/new', to: 'proposals#create', as: 'create_proposal'
     
 end
 

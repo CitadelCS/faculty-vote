@@ -2,9 +2,11 @@
 
 = form_tag new_proposal_path do
 
-  = label :proposal, :name,'Proposal Name'
+  = label :proposal, :name, 'Proposal Name'
+
   = text_field :name, 'Proposal Name'
 
   %br/
 
   = submit_tag 'Submit', :class => 'btn btn-primary'
+

@@ -17,8 +17,9 @@
         %td= proposal.number_no
         %td= proposal.number_abstain
         %td= proposal.updated_at
-        
-  %br/
-      
-  %td= link_to "Create New", new_proposal_path
+        %td= button_to 'Delete', proposal_path(proposal), :method => :destroy, :confirm => 'Are you sure?', :class => 'btn btn-primary'
+ %br/
+= link_to 'Add new proposal', new_proposal_path
 
+      
+  

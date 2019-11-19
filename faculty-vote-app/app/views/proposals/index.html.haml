@@ -18,6 +18,6 @@
         %td= proposal.number_no
         %td= proposal.number_abstain
         %td= proposal.updated_at
-        // %td= link_to "More about proposal.title}, proposal_path(proposal)
+        %td= button_to 'Delete', proposal_path(proposal), :method => :destroy, :confirm => 'Are you sure?', :class => 'btn btn-primary'
 
-/= link_to 'Add new proposal', new_movie_proposal
+= link_to 'Add new proposal', new_proposal_path

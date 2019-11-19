@@ -5,8 +5,10 @@ Rails.application.routes.draw do
     root :to => redirect('/authentication')
     
     get 'signup', to: 'authentication#signup'
-    post 'signup', to: 'authentication#signup_submit'
-    
+    post '/signup', to: 'authentication#signup_submit'
+    post '/proposals/new', to: 'proposals#create', as: 'create_proposal'
+    post '/proposals/:id', to: 'proposals#destroy', as: 'remove_proposal'
+    post '/signin', to: 'authentication#create', as: 'user_signin'
     
 end
 

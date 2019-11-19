@@ -10,6 +10,22 @@ class ProposalsController < ApplicationController
     @proposals = Proposal.order(ordering)
   end
   
+  def new
+  end
+  
+  def remove
+  end
+  
+  def create
+    @proposal = Proposal.create!(:name => params[:name]["Proposal Name"], :created_at => "#{Time.now.strftime("%Y-%m-%d %H:%M:%S")}", :updated_at => "#{Time.now.strftime("%Y-%m-%d %H:%M:%S")}")
+    redirect_to proposals_path
+  end
+  
+  def destroy
+    @proposal = Proposal.find(params[:id])
+    @proposal.destroy
+    redirect_to proposals_path
+  end
 #   -#  This file is app/views/proposals/open_proposals.html.haml
 # %h1  Open Proposals
 

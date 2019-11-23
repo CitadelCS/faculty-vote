@@ -300,7 +300,7 @@ DEPENDENCIES
   haml
   jbuilder (~> 2.0)
   jquery-rails
-  pg (~> 0.20)
+  pg (~> 0.18)
   rails (= 4.2.10)
   rails_12factor
   resque-smtp (~> 0.2.0)

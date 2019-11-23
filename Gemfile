@@ -68,7 +68,7 @@ group :development do
 end 
 
 group :production do
-  gem 'pg', '~> 0.20' # for Heroku deployment
+  gem 'pg', '~> 0.18' # for Heroku deployment
   gem 'rails_12factor'
 end
 

@@ -1,5 +1,5 @@
 # TL;DR: YOU SHOULD DELETE THIS FILE
-#
+#paths.rb 
 # This file is used by web_steps.rb, which you should also delete
 #
 # You have been warned
@@ -12,9 +12,17 @@ module NavigationHelpers
   #
   def path_to(page_name)
     case page_name
+    
 
-    when /^the home\s?page$/
-      '/'
+ when /^the FacultyVote home page/
+  '/proposals' 
+  
+  when /^the homepage/
+  '/proposals' 
+  
+  when /^the home\s?page$/
+   "/proposal"
+      
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

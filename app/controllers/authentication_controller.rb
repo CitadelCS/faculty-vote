@@ -24,6 +24,10 @@ class AuthenticationController < ApplicationController
     
   end
   
+  def logout
+    redirect_to "/"
+  end
+  
   def index 
   end
   

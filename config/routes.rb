@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     post '/signin', to: 'authentication#create', as: 'user_signin'
     post '/proposals/closed', to: 'proposals#closed', as: 'closed_proposal'
     
+    post '/logout', to: 'authentication#logout', as: 'user_logout'
+    
 end
 
   # The priority is based upon order of creation: first created -> highest priority.

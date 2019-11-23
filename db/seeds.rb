@@ -6,16 +6,16 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-proposals = [{:name => 'Hire a new guy', :number_yes => '5', :number_no => '2'},
-		    {:name => 'Give team A an A', :number_yes => '7', :number_no => '0'},
-		    {:name => 'Give team B an F', :number_yes => '7', :number_no => '0'},
-		    {:name => 'Pizza for lunch', :number_yes => '3', :number_no => '4'},
-		    {:name => 'Make meetings shorter', :number_yes => '6', :number_no => '1'},
-		    {:name => 'Eliminate meetings', :number_yes => '1', :number_no => '6'},
-		    {:name => 'Offer more courses', :number_yes => '3', :number_no => '4'},
-		    {:name => 'Increase salaries', :number_yes => '7', :number_no => '0'},
-		    {:name => 'Make tests open-notes', :number_yes => '2', :number_no => '5'},
-		    {:name => 'Hire new Department head', :number_yes => '0', :number_no => '7'}
+proposals = [{:name => 'Hire a new guy', :number_yes => '5', :number_no => '2', :number_abstain => '1', :created_at => '00/00/00', :status => '0'}, 
+		    {:name => 'Give team A an A', :number_yes => '7', :number_no => '0', :number_abstain => '1', :created_at => '00/00/00', :status => '0'},
+		    {:name => 'Give team B an F', :number_yes => '7', :number_no => '0', :number_abstain => '1', :created_at => '00/00/00', :status => '0'},
+		    {:name => 'Pizza for lunch', :number_yes => '3', :number_no => '4', :number_abstain => '1', :created_at => '00/00/00', :status => '0'},
+		    {:name => 'Make meetings shorter', :number_yes => '6', :number_no => '1', :number_abstain => '1', :created_at => '00/00/00', :status => '0'},
+		    {:name => 'Eliminate meetings', :number_yes => '1', :number_no => '6', :number_abstain => '1', :created_at => '00/00/00', :status => '0'},
+		    {:name => 'Offer more courses', :number_yes => '3', :number_no => '4', :number_abstain => '1', :created_at => '00/00/00', :status => '0'},
+		    {:name => 'Increase salaries', :number_yes => '7', :number_no => '0', :number_abstain => '1', :created_at => '00/00/00', :status => '0'},
+		    {:name => 'Make tests open-notes', :number_yes => '2', :number_no => '5', :number_abstain => '1', :created_at => '00/00/00', :status => '1'},
+		    {:name => 'Hire new Department head', :number_yes => '0', :number_no => '7', :number_abstain => '1', :created_at => '00/00/00', :status => '1'}
 
 	 ]
 	 

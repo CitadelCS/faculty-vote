@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20191113165525) do
   create_table "proposals", force: :cascade do |t|
     t.integer  "proposal_id"
     t.text     "name"
-    t.text     "status"
+    t.integer  "status"
     t.text     "result"
     t.integer  "number_votes"
     t.integer  "number_yes"

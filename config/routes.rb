@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     post '/proposals/new', to: 'proposals#create', as: 'create_proposal'
     post '/proposals/:id', to: 'proposals#destroy', as: 'remove_proposal'
     post '/signin', to: 'authentication#create', as: 'user_signin'
-
+    post '/proposals/closed', to: 'proposals#closed', as: 'closed_proposal'
     
 end
 

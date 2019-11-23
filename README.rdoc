@@ -18,7 +18,7 @@ Initial Setup:
  
     rake db:test:prepare
     
-    IF HEROKU MESSES UP FOR SOME DUMB PG NOT FOUND ERROR GO TO .BUNDLE FILE AND MAKE SURE IT SAYS 'BUNDLE_WITH: "production"'
+    
     
     
 

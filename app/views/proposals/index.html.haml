@@ -19,6 +19,7 @@
         %td= proposal.updated_at
         %td= button_to 'Delete', proposal_path(proposal), :method => :destroy, :confirm => 'Are you sure?', :class => 'btn btn-primary'
 = link_to 'Add new proposal', new_proposal_path
-
+%br
+= link_to 'View closed proposals', '/proposals/closed'
       
   

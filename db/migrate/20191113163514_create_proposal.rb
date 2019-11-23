@@ -3,7 +3,7 @@ class CreateProposal < ActiveRecord::Migration
     create_table :proposals do |t|
       t.integer :proposal_id, auto_increment: true
       t.text :name
-	    t.text :status
+	    t.integer :status
 	    t.text :result
 	    t.integer :number_votes
 	    t.integer :number_yes

@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20191113165525) do
 
   create_table "sessions", force: :cascade do |t|
     t.string   "session_id", null: false
+    t.integer  "user_id"
     t.text     "data"
     t.datetime "created_at"
     t.datetime "updated_at"

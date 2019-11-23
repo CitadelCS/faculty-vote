@@ -1,0 +1,10 @@
+# ignore temporary directories
+tmp/
+
+# ignore dev db
+db/development.sqlite3
+db/test.sqlite3
+
+# ignore log data file
+log/development.log
+log/test.log

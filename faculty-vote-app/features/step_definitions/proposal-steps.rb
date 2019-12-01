@@ -1,24 +1,16 @@
 # Add a declarative step here for populating the DB with proposals.
-#proposal-steps.rb 
-#Given /the following proposals exist/ do |proposals_table|
- # proposals_table.hashes.each do |proposals|
- #   Proposal.create proposals
+
+Given /the following proposals exist/ do |proposals_table|
+  proposals_table.hashes.each do |proposal|
+    Proposal.create proposal
     # each returned element will be a hash whose key is the table header.
     # you should arrange to add that proposal to the database here.
-  #end
-#end
-
-Given("the following proposals exist:") do |table|
-  
+  end
 end
 
-#Then /(.*) seed proposals should exist/ do | n_seeds |
- # proposal.count.should be n_seeds.to_i
-#end
-
-Then /(.*) seed proposals should exist/ do |table|
-
-end 
+Then /(.*) seed proposals should exist/ do | n_seeds |
+  Proposal.count.should be n_seeds.to_i
+end
 
 # Make sure that one string (regexp) occurs before or after another one
 #   on the same page
@@ -51,7 +43,6 @@ When /I (un)?check the following ratings: (.*)/ do |check, rating_list|
   #end
 
 end
-
 
 Then /I should see all the proposals/ do 
   # Make sure that all the movies in the app are visible in the table
@@ -87,7 +78,7 @@ Then("I should see that the proposal has been added") do
 end
 
 When("I delete a proposal") do
-  #click_on('Delete')
+  expect(page).to have_content Proposal.all.count(0)
 end
 
 When("I am redirected to the homepage") do
@@ -99,6 +90,5 @@ Then("I should see all of the active proposals") do
 end
 
 Then("I should not see the proposal I deleted") do
-  rows = page.body.scan(/<tr>/).count - 1
-  rows.should == Proposal.all.count - 1 
+  pending
 end

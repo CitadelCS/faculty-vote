@@ -26,25 +26,29 @@ class ProposalsController < ApplicationController
     @proposal.destroy
     redirect_to proposals_path
   end
-#   -#  This file is app/views/proposals/open_proposals.html.haml
-# %h1  Open Proposals
-
-# %table#movies
-#   %thead
-#     %tr
-#       %th Name 
-#       %th Yes
-#       %th No
-#       %th Abstain
-#       %th More
-#   %tbody
-#     - @proposals.each do |proposal|
-#       %tr
-#         %td= proposal.name 
-#         %td= proposal.yes
-#         %td= proposal.no
-#         %td= proposal.abstain
-#         %td= link_to "More about #{proposal.title}", proposal_path(proposal)
-
-# = link_to 'Add new proposal', new_movie_proposal
+  
+  def show
+  end
+  
+  def closed
+  end
+  
+  def edit
+    @proposal = Proposal.find(params[:id])
+    if (params[:state] == '1')
+      @proposal.increment!(:number_yes)
+      redirect_to proposals_path
+    end
+    if (params[:state] == '2')
+      @proposal.increment!(:number_no)
+      redirect_to proposals_path
+    end
+    if (params[:state] == '3')
+      @proposal.increment!(:number_abstain)
+      redirect_to proposals_path
+    end
+  end
+  
+  def update
+  end
 end

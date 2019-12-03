@@ -7,10 +7,11 @@ Rails.application.routes.draw do
     get 'signup', to: 'authentication#signup'
     post '/signup', to: 'authentication#signup_submit'
     post '/proposals/new', to: 'proposals#create', as: 'create_proposal'
-    post '/proposals/:id', to: 'proposals#destroy', as: 'remove_proposal'
+    post '/proposals/:id', to: 'proposals#update', as: 'remove_proposal'
     post '/signin', to: 'authentication#create', as: 'user_signin'
-    
-end
+    post '/proposals/closed', to: 'proposals#closed', as: 'closed_proposal'
+    post '/proposals/:id/edit', to: 'proposals#edit', as: 'vote_proposal'
+    end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

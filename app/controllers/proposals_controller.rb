@@ -22,8 +22,6 @@ class ProposalsController < ApplicationController
     # default: render 'new' template
   end
   
-  def new
-  end
   
   def remove
   end
@@ -43,6 +41,7 @@ class ProposalsController < ApplicationController
     @proposal = Proposal.find params[:id]
   end
 
-
+  def update
+  end
 
 end

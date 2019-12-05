@@ -1,5 +1,7 @@
 %h2 Create Proposal
 
+= link_to 'Back To Homepage', '/proposals'
+
 = form_tag new_proposal_path do
 
   = label :proposal, :name, 'Proposal Name'
@@ -9,4 +11,7 @@
   %br/
 
   = submit_tag 'Submit', :class => 'btn btn-primary'
+  
 
+
+  

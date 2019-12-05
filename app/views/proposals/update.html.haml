@@ -1,0 +1,11 @@
+%h2 Vote
+%table#movies
+  %thead
+    %tr
+      %th Yes
+      %th No
+      %th Abstain
+  %tbody
+    %td= button_to 'Yes',edit_proposal_url,:params => {:state => '1'}, :class => 'button_to'
+    %td= button_to 'No',edit_proposal_url,:params => {:state => '2'}, :class => 'button_to'
+    %td= button_to 'Abstain',edit_proposal_url,:params => {:state => '3'}, :class => 'button_to'

@@ -8,3 +8,6 @@ db/test.sqlite3
 # ignore log data file
 log/development.log
 log/test.log
+
+# ignore .bundle
+.bundle

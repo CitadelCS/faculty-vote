@@ -1,7 +1,4 @@
 class ProposalsController < ApplicationController
-  def new_params
-    params.requires(:proposal).permit(:name)
-  end
   def index 
     sort = params[:sort] || session[:sort]
     case sort
@@ -22,8 +19,6 @@ class ProposalsController < ApplicationController
     # default: render 'new' template
   end
   
-  def new
-  end
   
   def remove
   end
@@ -39,10 +34,28 @@ class ProposalsController < ApplicationController
     redirect_to proposals_path
   end
   
-  def edit
-    @proposal = Proposal.find params[:id]
+  def show
   end
-
-
-
+  
+  def closed
+  end
+  
+  def edit
+    @proposal = Proposal.find(params[:id])
+    if (params[:state] == '1')
+      @proposal.increment!(:number_yes)
+      redirect_to proposals_path
+    end
+    if (params[:state] == '2')
+      @proposal.increment!(:number_no)
+      redirect_to proposals_path
+    end
+    if (params[:state] == '3')
+      @proposal.increment!(:number_abstain)
+      redirect_to proposals_path
+    end
+  end
+  
+  def update
+  end
 end

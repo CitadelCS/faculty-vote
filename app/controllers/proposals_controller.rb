@@ -19,8 +19,6 @@ class ProposalsController < ApplicationController
     # default: render 'new' template
   end
   
-  def new
-  end
   
   def remove
   end

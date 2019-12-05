@@ -30,6 +30,12 @@ Run on Local (Cloud9):
 Access on Heroku:
 =================
     https://shielded-scrubland-95680.herokuapp.com/
+    
+    
+    
+If you Get an issue with PG in production make sure the .bundle file has this in it:
+======================================================================================
+    BUNDLE_WITH: "production"
 
 
 AJ WAS HERE***

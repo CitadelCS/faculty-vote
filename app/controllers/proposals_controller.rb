@@ -1,7 +1,4 @@
 class ProposalsController < ApplicationController
-  def new_params
-    params.requires(:proposal).permit(:name)
-  end
   def index 
     sort = params[:sort] || session[:sort]
     case sort
@@ -13,6 +10,8 @@ class ProposalsController < ApplicationController
     @proposals = Proposal.order(ordering)
     @proposals = Proposal.where(:status => 0)
   end
+<<<<<<< HEAD:faculty-vote-app/app/controllers/proposals_controller.rb
+=======
 
   def show
     @proposals = Proposal.where(:status => 1)
@@ -21,6 +20,7 @@ class ProposalsController < ApplicationController
   def new
     # default: render 'new' template
   end
+>>>>>>> master:app/controllers/proposals_controller.rb
   
   def new
   end
@@ -39,10 +39,28 @@ class ProposalsController < ApplicationController
     redirect_to proposals_path
   end
   
-  def edit
-    @proposal = Proposal.find params[:id]
+  def show
   end
-
-
-
+  
+  def closed
+  end
+  
+  def edit
+    @proposal = Proposal.find(params[:id])
+    if (params[:state] == '1')
+      @proposal.increment!(:number_yes)
+      redirect_to proposals_path
+    end
+    if (params[:state] == '2')
+      @proposal.increment!(:number_no)
+      redirect_to proposals_path
+    end
+    if (params[:state] == '3')
+      @proposal.increment!(:number_abstain)
+      redirect_to proposals_path
+    end
+  end
+  
+  def update
+  end
 end

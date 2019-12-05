@@ -10,8 +10,6 @@ class ProposalsController < ApplicationController
     @proposals = Proposal.order(ordering)
     @proposals = Proposal.where(:status => 0)
   end
-<<<<<<< HEAD:faculty-vote-app/app/controllers/proposals_controller.rb
-=======
 
   def show
     @proposals = Proposal.where(:status => 1)
@@ -20,7 +18,6 @@ class ProposalsController < ApplicationController
   def new
     # default: render 'new' template
   end
->>>>>>> master:app/controllers/proposals_controller.rb
   
   def new
   end

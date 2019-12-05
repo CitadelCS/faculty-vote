@@ -1,0 +1,66 @@
+class ProposalsController < ApplicationController
+  def index 
+    sort = params[:sort] || session[:sort]
+    case sort
+    
+    when 'date'
+      ordering,@date_header = {:date => :asc}, 'hilite'
+    end
+    
+    @proposals = Proposal.order(ordering)
+    @proposals = Proposal.where(:status => 0)
+  end
+<<<<<<< HEAD:faculty-vote-app/app/controllers/proposals_controller.rb
+=======
+
+  def show
+    @proposals = Proposal.where(:status => 1)
+  end
+  
+  def new
+    # default: render 'new' template
+  end
+>>>>>>> master:app/controllers/proposals_controller.rb
+  
+  def new
+  end
+  
+  def remove
+  end
+  
+  def create
+    @proposal = Proposal.create!(:name => params[:name]["Proposal Name"], :status => '0', :created_at => "#{Time.now.strftime("%Y-%m-%d %H:%M:%S")}", :updated_at => "#{Time.now.strftime("%Y-%m-%d %H:%M:%S")}")
+    redirect_to proposals_path
+  end
+  
+  def destroy
+    @proposal = Proposal.find(params[:id])
+    @proposal.destroy
+    redirect_to proposals_path
+  end
+  
+  def show
+  end
+  
+  def closed
+  end
+  
+  def edit
+    @proposal = Proposal.find(params[:id])
+    if (params[:state] == '1')
+      @proposal.increment!(:number_yes)
+      redirect_to proposals_path
+    end
+    if (params[:state] == '2')
+      @proposal.increment!(:number_no)
+      redirect_to proposals_path
+    end
+    if (params[:state] == '3')
+      @proposal.increment!(:number_abstain)
+      redirect_to proposals_path
+    end
+  end
+  
+  def update
+  end
+end

@@ -10,13 +10,17 @@ describe AuthenticationController, type: 'controller' do
             
             it 'should add new user to db' do
                 users_before = User.count
-                post :signup, :user => {:user => :first_name }
+                #print('USERS:', users_before)
+                post :signup, :user => {:first_name => 'f', :last_name => 'g', :email => 'h', :created_at => '', :updated_at => '', :password => 'j'}
+                #print('USERS2:', User.count)
                 expect(User.count).not_to eq(users_before)
+
             end
             
-            it 'should go to proposals route' do
+            it 'should reroute to signin' do
 			    post :create, :user => {:user => :first_name }
-                expect(response).to redirect_to proposals_path
+			    expect(response).to redirect_to root_path
+                #expect(response).to redirect_to proposals_path
 		    end
 		end
     end

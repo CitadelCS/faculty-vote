@@ -24,7 +24,16 @@ class ProposalsController < ApplicationController
   end
   
   def create
+    query = "SELECT email from users;"
+    @email = ActiveRecord::Base.connection.execute(query)
+    @email.each do |e| 
+      print "in email.each ", e["email"]
+      FacultyMailer.welcome_email( e["email"] ).deliver
+      print "post FacultyMailer"
+    end
+    
     @proposal = Proposal.create!(:name => params[:name]["Proposal Name"], :status => '0', :created_at => "#{Time.now.strftime("%Y-%m-%d %H:%M:%S")}", :updated_at => "#{Time.now.strftime("%Y-%m-%d %H:%M:%S")}")
+    
     redirect_to proposals_path
   end
   

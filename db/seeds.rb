@@ -23,13 +23,13 @@ proposals.each do |proposal|
     Proposal.create!(proposal)
 end
 
-users = [{:first_name => 'Matthew', :last_name => 'Blair', :email => 'mblair1@citadel.edu', :password => "one"},
-        {:first_name => 'Caitlin', :last_name => 'Cabrera', :email => 'ccabrera@citadel.edu', :password => "two"},
-        {:first_name => 'John-Anthony', :last_name => 'Thevos', :email => 'thevosjg@g.cofc.edu', :password => "three"},
-        {:first_name => 'Jared', :last_name => 'Mathews', :email => 'jmathew1@citadel.edu', :password => "four"},
-        {:first_name => 'Alexis', :last_name => 'Jackson', :email => 'jacksonaj1@g.cofc.edu', :password => "five"},
-		{:first_name => 'Michael', :last_name => 'Verdicchio', :email => 'mv@citadel.edu', :password => "six"},
-		{:first_name => 'Shankar', :last_name => 'Banik', :email => 'baniks1@citadel.edu', :password => "seven"}
+users = [{:user_id => 1, :first_name => 'Matthew', :last_name => 'Blair', :email => 'mblair1@citadel.edu', :password => "one"},
+        {:user_id => 2, :first_name => 'Caitlin', :last_name => 'Cabrera', :email => 'ccabrera@citadel.edu', :password => "two"},
+        {:user_id => 3, :first_name => 'John-Anthony', :last_name => 'Thevos', :email => 'thevosjg@g.cofc.edu', :password => "three"},
+        {:user_id => 4, :first_name => 'Jared', :last_name => 'Mathews', :email => 'jmathew1@citadel.edu', :password => "four"},
+        {:user_id => 5, :first_name => 'Alexis', :last_name => 'Jackson', :email => 'jacksonaj1@g.cofc.edu', :password => "five"},
+		{:user_id => 6, :first_name => 'Michael', :last_name => 'Verdicchio', :email => 'mv@citadel.edu', :password => "six"},
+		{:user_id => 7, :first_name => 'Shankar', :last_name => 'Banik', :email => 'baniks1@citadel.edu', :password => "seven"}
 	 ]
 	 
 users.each do |user|

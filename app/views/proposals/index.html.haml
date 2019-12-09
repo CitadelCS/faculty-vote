@@ -20,10 +20,11 @@
         %td= proposal.number_abstain
         %td= proposal.updated_at
         %td= button_to 'Vote', proposal, :method => :patch, :class => 'btn btn-primary'
-        %td= button_to 'Delete', proposal_path(proposal), :method => :destroy, :confirm => 'Are you sure?', :class => 'btn btn-primary'
+        %td= button_to 'Delete', proposal_path(proposal), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-primary'
 
 %br        
 = link_to 'Add new proposal', new_proposal_path
 %br
 = link_to 'View closed proposals', '/proposals/closed'
 = link_to 'Logout', user_logout_path(), :method => :post
+

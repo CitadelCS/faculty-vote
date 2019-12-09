@@ -2257,3 +2257,281 @@ Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.1, ::1, 127.
 Processing by AuthenticationController#index as HTML
   Rendered authentication/index.html.haml within layouts/application (0.2ms)
 Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.1ms)
+  [1m[36m (4.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (5.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateUsers (20191031003451)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "first_name" varchar, "last_name" varchar, "email" varchar, "password" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191031003451"]]
+  [1m[35m (4.2ms)[0m  commit transaction
+Migrating to AddSessionsTable (20191112160127)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+DEPRECATION WARNING: `#timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in change at /home/ec2-user/environment/Homework/faculty-vote/db/migrate/20191112160127_add_sessions_table.rb:7)
+  [1m[35m (0.2ms)[0m  CREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar NOT NULL, "user_id" integer, "data" text, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.2ms)[0m  [1mCREATE UNIQUE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_sessions_on_session_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_sessions_on_session_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20191112160127"]]
+  [1m[36m (6.6ms)[0m  [1mcommit transaction[0m
+Migrating to CreateProposal (20191113163514)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "proposals" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "proposal_id" integer, "name" text, "status" integer, "result" text, "number_votes" integer, "number_yes" integer, "number_no" integer, "number_abstain" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20191113163514"]]
+  [1m[36m (5.5ms)[0m  [1mcommit transaction[0m
+Migrating to CreateVotes (20191113165525)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "proposal_id" integer, "vote_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20191113165525"]]
+  [1m[36m (5.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_sessions_on_updated_at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_sessions_on_updated_at' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_sessions_on_session_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_sessions_on_session_id' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "proposals" ("name", "number_yes", "number_no", "number_abstain", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Hire a new guy"], ["number_yes", 5], ["number_no", 2], ["number_abstain", 1], ["status", 0], ["created_at", "2019-12-09 21:03:54.026532"], ["updated_at", "2019-12-09 21:03:54.026532"]]
+  [1m[35m (5.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "proposals" ("name", "number_yes", "number_no", "number_abstain", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["name", "Give team A an A"], ["number_yes", 7], ["number_no", 0], ["number_abstain", 1], ["status", 0], ["created_at", "2019-12-09 21:03:54.033917"], ["updated_at", "2019-12-09 21:03:54.033917"]]
+  [1m[36m (4.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "proposals" ("name", "number_yes", "number_no", "number_abstain", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Give team B an F"], ["number_yes", 7], ["number_no", 0], ["number_abstain", 1], ["status", 0], ["created_at", "2019-12-09 21:03:54.039474"], ["updated_at", "2019-12-09 21:03:54.039474"]]
+  [1m[35m (5.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "proposals" ("name", "number_yes", "number_no", "number_abstain", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["name", "Pizza for lunch"], ["number_yes", 3], ["number_no", 4], ["number_abstain", 1], ["status", 0], ["created_at", "2019-12-09 21:03:54.046059"], ["updated_at", "2019-12-09 21:03:54.046059"]]
+  [1m[36m (4.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "proposals" ("name", "number_yes", "number_no", "number_abstain", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Make meetings shorter"], ["number_yes", 6], ["number_no", 1], ["number_abstain", 1], ["status", 0], ["created_at", "2019-12-09 21:03:54.051275"], ["updated_at", "2019-12-09 21:03:54.051275"]]
+  [1m[35m (4.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "proposals" ("name", "number_yes", "number_no", "number_abstain", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["name", "Eliminate meetings"], ["number_yes", 1], ["number_no", 6], ["number_abstain", 1], ["status", 0], ["created_at", "2019-12-09 21:03:54.057476"], ["updated_at", "2019-12-09 21:03:54.057476"]]
+  [1m[36m (4.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "proposals" ("name", "number_yes", "number_no", "number_abstain", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Offer more courses"], ["number_yes", 3], ["number_no", 4], ["number_abstain", 1], ["status", 0], ["created_at", "2019-12-09 21:03:54.063477"], ["updated_at", "2019-12-09 21:03:54.063477"]]
+  [1m[35m (5.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "proposals" ("name", "number_yes", "number_no", "number_abstain", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["name", "Increase salaries"], ["number_yes", 7], ["number_no", 0], ["number_abstain", 1], ["status", 0], ["created_at", "2019-12-09 21:03:54.070144"], ["updated_at", "2019-12-09 21:03:54.070144"]]
+  [1m[36m (4.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "proposals" ("name", "number_yes", "number_no", "number_abstain", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Make tests open-notes"], ["number_yes", 2], ["number_no", 5], ["number_abstain", 1], ["status", 1], ["created_at", "2019-12-09 21:03:54.075675"], ["updated_at", "2019-12-09 21:03:54.075675"]]
+  [1m[35m (5.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "proposals" ("name", "number_yes", "number_no", "number_abstain", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["name", "Hire new Department head"], ["number_yes", 0], ["number_no", 7], ["number_abstain", 1], ["status", 1], ["created_at", "2019-12-09 21:03:54.082270"], ["updated_at", "2019-12-09 21:03:54.082270"]]
+  [1m[36m (4.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("user_id", "first_name", "last_name", "email", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["first_name", "Matthew"], ["last_name", "Blair"], ["email", "mblair1@citadel.edu"], ["password", "one"], ["created_at", "2019-12-09 21:03:54.092496"], ["updated_at", "2019-12-09 21:03:54.092496"]]
+  [1m[35m (4.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("user_id", "first_name", "last_name", "email", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["user_id", 2], ["first_name", "Caitlin"], ["last_name", "Cabrera"], ["email", "ccabrera@citadel.edu"], ["password", "two"], ["created_at", "2019-12-09 21:03:54.097998"], ["updated_at", "2019-12-09 21:03:54.097998"]]
+  [1m[36m (4.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("user_id", "first_name", "last_name", "email", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 3], ["first_name", "John-Anthony"], ["last_name", "Thevos"], ["email", "thevosjg@g.cofc.edu"], ["password", "three"], ["created_at", "2019-12-09 21:03:54.103211"], ["updated_at", "2019-12-09 21:03:54.103211"]]
+  [1m[35m (5.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("user_id", "first_name", "last_name", "email", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["user_id", 4], ["first_name", "Jared"], ["last_name", "Mathews"], ["email", "jmathew1@citadel.edu"], ["password", "four"], ["created_at", "2019-12-09 21:03:54.109374"], ["updated_at", "2019-12-09 21:03:54.109374"]]
+  [1m[36m (4.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("user_id", "first_name", "last_name", "email", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 5], ["first_name", "Alexis"], ["last_name", "Jackson"], ["email", "jacksonaj1@g.cofc.edu"], ["password", "five"], ["created_at", "2019-12-09 21:03:54.114517"], ["updated_at", "2019-12-09 21:03:54.114517"]]
+  [1m[35m (5.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("user_id", "first_name", "last_name", "email", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["user_id", 6], ["first_name", "Michael"], ["last_name", "Verdicchio"], ["email", "mv@citadel.edu"], ["password", "six"], ["created_at", "2019-12-09 21:03:54.121386"], ["updated_at", "2019-12-09 21:03:54.121386"]]
+  [1m[36m (5.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("user_id", "first_name", "last_name", "email", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 7], ["first_name", "Shankar"], ["last_name", "Banik"], ["email", "baniks1@citadel.edu"], ["password", "seven"], ["created_at", "2019-12-09 21:03:54.127631"], ["updated_at", "2019-12-09 21:03:54.127631"]]
+  [1m[35m (5.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "votes" ("user_id", "proposal_id", "vote_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 1], ["proposal_id", 1], ["vote_type", "yes"], ["created_at", "2019-12-09 21:03:54.137648"], ["updated_at", "2019-12-09 21:03:54.137648"]]
+  [1m[36m (4.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "votes" ("user_id", "proposal_id", "vote_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["proposal_id", 1], ["vote_type", "no"], ["created_at", "2019-12-09 21:03:54.143750"], ["updated_at", "2019-12-09 21:03:54.143750"]]
+  [1m[35m (5.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "votes" ("user_id", "proposal_id", "vote_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 3], ["proposal_id", 1], ["vote_type", "abstain"], ["created_at", "2019-12-09 21:03:54.150001"], ["updated_at", "2019-12-09 21:03:54.150001"]]
+  [1m[36m (4.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "votes" ("user_id", "proposal_id", "vote_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["proposal_id", 1], ["vote_type", "yes"], ["created_at", "2019-12-09 21:03:54.155032"], ["updated_at", "2019-12-09 21:03:54.155032"]]
+  [1m[35m (5.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "votes" ("user_id", "proposal_id", "vote_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 5], ["proposal_id", 1], ["vote_type", "no"], ["created_at", "2019-12-09 21:03:54.161298"], ["updated_at", "2019-12-09 21:03:54.161298"]]
+  [1m[36m (4.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "votes" ("user_id", "proposal_id", "vote_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 6], ["proposal_id", 1], ["vote_type", "yes"], ["created_at", "2019-12-09 21:03:54.167062"], ["updated_at", "2019-12-09 21:03:54.167062"]]
+  [1m[35m (5.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "votes" ("user_id", "proposal_id", "vote_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 7], ["proposal_id", 1], ["vote_type", "yes"], ["created_at", "2019-12-09 21:03:54.173750"], ["updated_at", "2019-12-09 21:03:54.173750"]]
+  [1m[36m (4.7ms)[0m  [1mcommit transaction[0m
+  [1m[36m (5.7ms)[0m  [1mCREATE TABLE "proposals" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "proposal_id" integer, "name" text, "status" integer, "result" text, "number_votes" integer, "number_yes" integer, "number_no" integer, "number_abstain" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (4.0ms)[0m  CREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar NOT NULL, "user_id" integer, "data" text, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (4.2ms)[0m  CREATE UNIQUE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_sessions_on_session_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_sessions_on_session_id' AND type='index'
+[0m
+  [1m[35m (4.9ms)[0m  CREATE  INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")
+  [1m[36m (5.5ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "first_name" varchar, "last_name" varchar, "email" varchar, "password" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (4.0ms)[0m  CREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "proposal_id" integer, "vote_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (5.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (4.2ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (3.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20191113165525')
+  [1m[36m (3.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20191112160127')[0m
+  [1m[35m (3.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20191113163514')
+  [1m[36m (4.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20191031003451')[0m
+
+
+Started GET "/" for 155.225.2.100 at 2019-12-09 21:04:19 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/authentication" for 155.225.2.100 at 2019-12-09 21:04:20 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AuthenticationController#index as HTML
+  Rendered authentication/index.html.haml within layouts/application (7.0ms)
+Completed 200 OK in 159ms (Views: 151.0ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/signin" for 155.225.2.100 at 2019-12-09 21:04:30 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AuthenticationController#create as HTML
+  Parameters: {"email"=>"jmathew1@citadel.edu", "pwd"=>"four"}
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."password" = ? LIMIT 1  [["email", "jmathew1@citadel.edu"], ["password", "four"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE "users"."email" = ? AND "users"."password" = ?[0m  [["email", "jmathew1@citadel.edu"], ["password", "four"]]
+Redirected to https://07f16bd2c68b41fa8b4a46a50ef1951d.vfs.cloud9.us-east-2.amazonaws.com/proposals
+Completed 302 Found in 10ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/proposals" for 155.225.2.100 at 2019-12-09 21:04:30 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProposalsController#index as HTML
+  [1m[35mProposal Load (0.2ms)[0m  SELECT "proposals".* FROM "proposals" WHERE "proposals"."status" = ?  [["status", 0]]
+  Rendered proposals/index.html.haml within layouts/application (12.6ms)
+Completed 200 OK in 24ms (Views: 21.7ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/proposals/1" for 155.225.2.100 at 2019-12-09 21:04:32 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProposalsController#update as HTML
+  Parameters: {"authenticity_token"=>"nClzdUkRZx5Ht28uRQ8g4C7p1hy43XhsOu/g5r86vkJV5Wgrg+L1Zp+DLDwoPUOpaG/1jA1P4mPM1iWQ+Eb7tQ==", "id"=>"1"}
+  Rendered proposals/update.html.haml within layouts/application (2.8ms)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/proposals/1/edit" for 155.225.2.100 at 2019-12-09 21:04:33 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProposalsController#edit as HTML
+  Parameters: {"authenticity_token"=>"J4VVyTMh1uhbfPxnr1jeuindUePOGM87CoCZIAYkMhPuSU6X+dJEkINIv3XCar3zb1tyc3uKVTT8uVxWQVh35A==", "state"=>"1", "user_id"=>"4", "id"=>"1"}
+  [1m[36mVote Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "votes" WHERE "votes"."user_id" = ? AND "votes"."proposal_id" = ? LIMIT 1[0m  [["user_id", 4], ["proposal_id", 1]]
+Redirected to https://07f16bd2c68b41fa8b4a46a50ef1951d.vfs.cloud9.us-east-2.amazonaws.com/proposals
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/proposals" for 155.225.2.100 at 2019-12-09 21:04:34 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProposalsController#index as HTML
+  [1m[35mProposal Load (0.1ms)[0m  SELECT "proposals".* FROM "proposals" WHERE "proposals"."status" = ?  [["status", 0]]
+  Rendered proposals/index.html.haml within layouts/application (3.9ms)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/proposals/2" for 155.225.2.100 at 2019-12-09 21:04:36 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProposalsController#update as HTML
+  Parameters: {"authenticity_token"=>"YHN8T0zAjhQTGrYqwz4eYX42/L2c8YDrC81hh+bloBqpv2cRhjMcbMsu9TiuDH0oOLDfLSljGuT99KTxoZnl7Q==", "id"=>"2"}
+  Rendered proposals/update.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/proposals/2/edit" for 155.225.2.100 at 2019-12-09 21:04:38 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProposalsController#edit as HTML
+  Parameters: {"authenticity_token"=>"apy4xKGN3GClV8laHis16Jt4hI/h7xQFqVpitou4RzijUKOaa35OGH1jikhzGVah3f6nH1R9jgpfY6fAzMQCzw==", "state"=>"1", "user_id"=>"4", "id"=>"2"}
+  [1m[36mVote Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "votes" WHERE "votes"."user_id" = ? AND "votes"."proposal_id" = ? LIMIT 1[0m  [["user_id", 4], ["proposal_id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "votes" ("user_id", "proposal_id", "vote_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["proposal_id", 2], ["vote_type", "yes"], ["created_at", "2019-12-09 21:04:38.000000"], ["updated_at", "2019-12-09 21:04:38.000000"]]
+  [1m[35m (4.0ms)[0m  commit transaction
+  [1m[36mProposal Load (0.1ms)[0m  [1mSELECT  "proposals".* FROM "proposals" WHERE "proposals"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "proposals" SET "number_yes" = ?, "updated_at" = ? WHERE "proposals"."id" = ?[0m  [["number_yes", 8], ["updated_at", "2019-12-09 21:04:38.317656"], ["id", 2]]
+  [1m[35m (3.8ms)[0m  commit transaction
+Redirected to https://07f16bd2c68b41fa8b4a46a50ef1951d.vfs.cloud9.us-east-2.amazonaws.com/proposals
+Completed 302 Found in 20ms (ActiveRecord: 8.8ms)
+
+
+Started GET "/proposals" for 155.225.2.100 at 2019-12-09 21:04:38 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProposalsController#index as HTML
+  [1m[36mProposal Load (0.1ms)[0m  [1mSELECT "proposals".* FROM "proposals" WHERE "proposals"."status" = ?[0m  [["status", 0]]
+  Rendered proposals/index.html.haml within layouts/application (3.9ms)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/proposals/2" for 155.225.2.100 at 2019-12-09 21:04:40 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProposalsController#update as HTML
+  Parameters: {"authenticity_token"=>"sVuDXF0KMV6o3TbXAmxwYUtw24XPMHJsN7zHzjHC40Z4l5gCl/mjJnDpdcVvXhMoDfb4FXqi6GPBhQK4dr6msQ==", "id"=>"2"}
+  Rendered proposals/update.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/proposals/2/edit" for 155.225.2.100 at 2019-12-09 21:04:41 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProposalsController#edit as HTML
+  Parameters: {"authenticity_token"=>"DVivqcYwpHM6rx9MAFARdHjr8r7qyl9E0flMnyAAvBfElLT3DMM2C+KbXF5tYnI9Pm3RLl9YxUsnwInpZ3z54A==", "state"=>"1", "user_id"=>"4", "id"=>"2"}
+  [1m[35mVote Exists (0.1ms)[0m  SELECT  1 AS one FROM "votes" WHERE "votes"."user_id" = ? AND "votes"."proposal_id" = ? LIMIT 1  [["user_id", 4], ["proposal_id", 2]]
+Redirected to https://07f16bd2c68b41fa8b4a46a50ef1951d.vfs.cloud9.us-east-2.amazonaws.com/proposals
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/proposals" for 155.225.2.100 at 2019-12-09 21:04:41 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProposalsController#index as HTML
+  [1m[36mProposal Load (0.1ms)[0m  [1mSELECT "proposals".* FROM "proposals" WHERE "proposals"."status" = ?[0m  [["status", 0]]
+  Rendered proposals/index.html.haml within layouts/application (3.8ms)
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/logout" for 155.225.2.100 at 2019-12-09 21:04:44 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AuthenticationController#logout as HTML
+  Parameters: {"authenticity_token"=>"1oAS2qeZBHp8Tv3WN9ExGEk1+FgRQNWcCe0H0SfLAsEfTAmEbWqWAqR6vsRa41JRD7PbyKTST5P/1MKnYLdHNg=="}
+Redirected to https://07f16bd2c68b41fa8b4a46a50ef1951d.vfs.cloud9.us-east-2.amazonaws.com/
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 155.225.2.100 at 2019-12-09 21:04:44 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/authentication" for 155.225.2.100 at 2019-12-09 21:04:44 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AuthenticationController#index as HTML
+  Rendered authentication/index.html.haml within layouts/application (0.2ms)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.1ms)

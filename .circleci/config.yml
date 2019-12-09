@@ -1,0 +1,35 @@
+# Ruby CircleCI 2.1 configuration file
+#
+# Check https://circleci.com/docs/2.0/ruby/ for more details
+#
+version: 2.1 
+​
+​
+orbs:
+  ruby: circleci/ruby@0.1.2 # Ruby orb registry: https://circleci.com/orbs/registry/orb/circleci/ruby
+​
+jobs: 
+  build: 
+    environment:
+      CC_TEST_REPORTER_ID: a472932189a90d048448ba7ae1a081eb8d78bc85e759948a89a612b3b9fac85e
+    docker: 
+      - image: circleci/ruby:2.6.3-stretch-node
+    working_directory: ~/repo
+    steps: 
+      - checkout
+      - run: 
+          name: Which bundler?
+          command: bundle -v
+      - ruby/bundle-install
+      - run:
+          name: Setup Code Climate test reporter
+          command: |
+            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+            chmod +x ./cc-test-reporter
+      - run:
+          name: Run tests
+          command: |
+            ./cc-test-reporter before-build
+            bundle exec rspec
+            bundle exec cucumber
+            ./cc-test-reporter after-build --exit-code $?

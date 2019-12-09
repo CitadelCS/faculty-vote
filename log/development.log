@@ -2071,3 +2071,237 @@ Processing by ProposalsController#show as HTML
   [1m[35mProposal Load (0.1ms)[0m  SELECT "proposals".* FROM "proposals" WHERE "proposals"."status" = ?  [["status", 1]]
   Rendered proposals/show.html.haml within layouts/application (1.2ms)
 Completed 200 OK in 22ms (Views: 21.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 99.170.208.95 at 2019-12-06 22:32:51 +0000
+Cannot render console from 99.170.208.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/authentication" for 99.170.208.95 at 2019-12-06 22:32:51 +0000
+Cannot render console from 99.170.208.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AuthenticationController#index as HTML
+  Rendered authentication/index.html.haml within layouts/application (24.2ms)
+Completed 200 OK in 377ms (Views: 376.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 99.170.208.95 at 2019-12-06 22:32:51 +0000
+Cannot render console from 99.170.208.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 99.170.208.95 at 2019-12-06 22:32:51 +0000
+Cannot render console from 99.170.208.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" for 99.170.208.95 at 2019-12-06 22:32:51 +0000
+Cannot render console from 99.170.208.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 99.170.208.95 at 2019-12-06 22:32:51 +0000
+Cannot render console from 99.170.208.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 99.170.208.95 at 2019-12-06 22:32:51 +0000
+Cannot render console from 99.170.208.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started POST "/signin" for 99.170.208.95 at 2019-12-06 22:32:55 +0000
+Cannot render console from 99.170.208.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AuthenticationController#create as HTML
+  Parameters: {"email"=>"ccabrera@citadel.edu", "pwd"=>"two"}
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."password" = ? LIMIT 1  [["email", "ccabrera@citadel.edu"], ["password", "two"]]
+Redirected to https://0c5212ec2b1048d5abcb10bc9eda5059.vfs.cloud9.us-east-2.amazonaws.com/proposals
+Completed 302 Found in 31ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/proposals" for 99.170.208.95 at 2019-12-06 22:32:55 +0000
+Cannot render console from 99.170.208.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProposalsController#index as HTML
+  [1m[36mProposal Load (0.2ms)[0m  [1mSELECT "proposals".* FROM "proposals" WHERE "proposals"."status" = ?[0m  [["status", 0]]
+  Rendered proposals/index.html.haml within layouts/application (27.8ms)
+Completed 200 OK in 54ms (Views: 47.9ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/proposals/5" for 99.170.208.95 at 2019-12-06 22:32:57 +0000
+Cannot render console from 99.170.208.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProposalsController#update as HTML
+  Parameters: {"authenticity_token"=>"hAZ7S1AigbajDSSvUilq2hRvSAq9o3IK39S5w57PsHaie4MVJjnqm8p3TFxJtD3ljDGgGIhh89RNhM+Wz5ytvA==", "id"=>"5"}
+  Rendered proposals/update.html.haml within layouts/application (2.8ms)
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/proposals/5/edit" for 99.170.208.95 at 2019-12-06 22:33:00 +0000
+Cannot render console from 99.170.208.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProposalsController#edit as HTML
+  Parameters: {"authenticity_token"=>"qUG9Cc7Uy9CisrPZDwkUwUBPqhEx4AMOTU3MiVmlAkCPPEVXuM+g/cvI2yoUlEP+2BFCAwQigtDfHbrcCPYfig==", "state"=>"1", "id"=>"5"}
+  [1m[35mProposal Load (0.1ms)[0m  SELECT  "proposals".* FROM "proposals" WHERE "proposals"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "proposals" SET "number_yes" = ?, "updated_at" = ? WHERE "proposals"."id" = ?  [["number_yes", 7], ["updated_at", "2019-12-06 22:33:00.916274"], ["id", 5]]
+  [1m[36m (5.9ms)[0m  [1mcommit transaction[0m
+Redirected to https://0c5212ec2b1048d5abcb10bc9eda5059.vfs.cloud9.us-east-2.amazonaws.com/proposals
+Completed 302 Found in 12ms (ActiveRecord: 6.3ms)
+
+
+Started GET "/proposals" for 99.170.208.95 at 2019-12-06 22:33:01 +0000
+Cannot render console from 99.170.208.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProposalsController#index as HTML
+  [1m[35mProposal Load (0.1ms)[0m  SELECT "proposals".* FROM "proposals" WHERE "proposals"."status" = ?  [["status", 0]]
+  Rendered proposals/index.html.haml within layouts/application (6.9ms)
+Completed 200 OK in 34ms (Views: 32.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/proposals/8" for 99.170.208.95 at 2019-12-06 22:33:03 +0000
+Cannot render console from 99.170.208.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProposalsController#update as HTML
+  Parameters: {"authenticity_token"=>"y/3qO/EM/G4SmQyDOVRd2Ct1kwGQ4nvXEN9W9jPU3SjtgBJlhxeXQ3vjZHAiyQrnsyt7E6Ug+gmCjyCjYofA4g==", "id"=>"8"}
+  Rendered proposals/update.html.haml within layouts/application (1.9ms)
+Completed 200 OK in 32ms (Views: 29.7ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/proposals/8/edit" for 99.170.208.95 at 2019-12-06 22:33:05 +0000
+Cannot render console from 99.170.208.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProposalsController#edit as HTML
+  Parameters: {"authenticity_token"=>"S7HR6PN3ifBmlJhQpn2yW7Tp6NJnliNQNnvHrc94Q7RtzCm2hWzi3Q/u8KO94OVkLLcAwFJUoo6kK7H4nitefg==", "state"=>"1", "id"=>"8"}
+  [1m[36mProposal Load (0.1ms)[0m  [1mSELECT  "proposals".* FROM "proposals" WHERE "proposals"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "proposals" SET "number_yes" = ?, "updated_at" = ? WHERE "proposals"."id" = ?[0m  [["number_yes", 8], ["updated_at", "2019-12-06 22:33:05.145342"], ["id", 8]]
+  [1m[35m (4.0ms)[0m  commit transaction
+Redirected to https://0c5212ec2b1048d5abcb10bc9eda5059.vfs.cloud9.us-east-2.amazonaws.com/proposals
+Completed 302 Found in 10ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/proposals" for 99.170.208.95 at 2019-12-06 22:33:05 +0000
+Cannot render console from 99.170.208.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProposalsController#index as HTML
+  [1m[36mProposal Load (0.1ms)[0m  [1mSELECT "proposals".* FROM "proposals" WHERE "proposals"."status" = ?[0m  [["status", 0]]
+  Rendered proposals/index.html.haml within layouts/application (7.5ms)
+Completed 200 OK in 25ms (Views: 23.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/proposals/8" for 99.170.208.95 at 2019-12-06 22:33:09 +0000
+Cannot render console from 99.170.208.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProposalsController#update as HTML
+  Parameters: {"authenticity_token"=>"k6lQNpy0bHLyDtUej5YJSIu/jiNo0Z6btJfu0W+cmLa11Kho6q8HX5t0ve2UC153E+FmMV0TH0Umx5iEPs+FfA==", "id"=>"8"}
+  Rendered proposals/update.html.haml within layouts/application (0.8ms)
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/proposals/7" for 99.170.208.95 at 2019-12-06 22:33:13 +0000
+Cannot render console from 99.170.208.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProposalsController#update as HTML
+  Parameters: {"authenticity_token"=>"k6lQNpy0bHLyDtUej5YJSIu/jiNo0Z6btJfu0W+cmLa11Kho6q8HX5t0ve2UC153E+FmMV0TH0Umx5iEPs+FfA==", "id"=>"7"}
+  Rendered proposals/update.html.haml within layouts/application (0.8ms)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 99.170.208.95 at 2019-12-06 22:47:02 +0000
+Cannot render console from 99.170.208.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/authentication" for 99.170.208.95 at 2019-12-06 22:47:02 +0000
+Cannot render console from 99.170.208.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AuthenticationController#index as HTML
+  Rendered authentication/index.html.haml within layouts/application (6.7ms)
+Completed 200 OK in 226ms (Views: 218.3ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/signin" for 99.170.208.95 at 2019-12-06 22:47:05 +0000
+Cannot render console from 99.170.208.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AuthenticationController#create as HTML
+  Parameters: {"email"=>"ccabrera@citadel.edu", "pwd"=>"two"}
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."password" = ? LIMIT 1  [["email", "ccabrera@citadel.edu"], ["password", "two"]]
+Redirected to https://0c5212ec2b1048d5abcb10bc9eda5059.vfs.cloud9.us-east-2.amazonaws.com/proposals
+Completed 302 Found in 10ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/proposals" for 99.170.208.95 at 2019-12-06 22:47:05 +0000
+Cannot render console from 99.170.208.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProposalsController#index as HTML
+  [1m[36mProposal Load (0.2ms)[0m  [1mSELECT "proposals".* FROM "proposals" WHERE "proposals"."status" = ?[0m  [["status", 0]]
+  Rendered proposals/index.html.haml within layouts/application (12.6ms)
+Completed 200 OK in 25ms (Views: 22.5ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/proposals/4" for 99.170.208.95 at 2019-12-06 22:47:07 +0000
+Cannot render console from 99.170.208.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProposalsController#update as HTML
+  Parameters: {"authenticity_token"=>"bFWkhbssTjDtwRJIyV3f+5cQk+V5t3gxvL+rgF4Toe1KKFzbzTclHYS7ervSwIjED05790x1+e8u793VD0C8Jw==", "id"=>"4"}
+  Rendered proposals/update.html.haml within layouts/application (2.7ms)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/proposals/4/edit" for 99.170.208.95 at 2019-12-06 22:47:08 +0000
+Cannot render console from 99.170.208.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProposalsController#edit as HTML
+  Parameters: {"authenticity_token"=>"2htsD+9CjLjoRUNBY1/ZGgEZOY1K70iAI7K/ap7pFOn8ZpRRmVnnlYE/K7J4wo4lmUfRn38tyV6x4sk/z7oJIw==", "state"=>"1", "id"=>"4"}
+  [1m[35mProposal Load (0.1ms)[0m  SELECT  "proposals".* FROM "proposals" WHERE "proposals"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "proposals" SET "number_yes" = ?, "updated_at" = ? WHERE "proposals"."id" = ?  [["number_yes", 4], ["updated_at", "2019-12-06 22:47:08.893949"], ["id", 4]]
+  [1m[36m (3.8ms)[0m  [1mcommit transaction[0m
+Redirected to https://0c5212ec2b1048d5abcb10bc9eda5059.vfs.cloud9.us-east-2.amazonaws.com/proposals
+Completed 302 Found in 9ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/proposals" for 99.170.208.95 at 2019-12-06 22:47:08 +0000
+Cannot render console from 99.170.208.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProposalsController#index as HTML
+  [1m[35mProposal Load (0.1ms)[0m  SELECT "proposals".* FROM "proposals" WHERE "proposals"."status" = ?  [["status", 0]]
+  Rendered proposals/index.html.haml within layouts/application (3.7ms)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/proposals/4" for 99.170.208.95 at 2019-12-06 22:47:11 +0000
+Cannot render console from 99.170.208.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProposalsController#update as HTML
+  Parameters: {"authenticity_token"=>"ntHqswneMa1CbUyXCBZp5v2NsYXrZtGeDM1s8lNbb1y4rBLtf8VagCsXJGQTiz7ZZdNZl96kUECenRqnAghylg==", "id"=>"4"}
+  Rendered proposals/update.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/proposals/4/edit" for 99.170.208.95 at 2019-12-06 22:47:13 +0000
+Cannot render console from 99.170.208.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProposalsController#edit as HTML
+  Parameters: {"authenticity_token"=>"iNRg9r6RhIWmkjvEjKYQAbtZkAXhGGXa3ke0BATYw16uqZioyIrvqM/oUzeXO0c+Iwd4F9Ta5ARMF8JRVYvelA==", "state"=>"1", "id"=>"4"}
+  [1m[36mProposal Load (0.1ms)[0m  [1mSELECT  "proposals".* FROM "proposals" WHERE "proposals"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "proposals" SET "number_yes" = ?, "updated_at" = ? WHERE "proposals"."id" = ?[0m  [["number_yes", 5], ["updated_at", "2019-12-06 22:47:13.358887"], ["id", 4]]
+  [1m[35m (4.0ms)[0m  commit transaction
+Redirected to https://0c5212ec2b1048d5abcb10bc9eda5059.vfs.cloud9.us-east-2.amazonaws.com/proposals
+Completed 302 Found in 8ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/proposals" for 99.170.208.95 at 2019-12-06 22:47:13 +0000
+Cannot render console from 99.170.208.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProposalsController#index as HTML
+  [1m[36mProposal Load (0.1ms)[0m  [1mSELECT "proposals".* FROM "proposals" WHERE "proposals"."status" = ?[0m  [["status", 0]]
+  Rendered proposals/index.html.haml within layouts/application (3.9ms)
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/proposals/4" for 99.170.208.95 at 2019-12-06 22:47:22 +0000
+Cannot render console from 99.170.208.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProposalsController#update as HTML
+  Parameters: {"authenticity_token"=>"lyGuUQuL2U/jXLwUpKu4NhYbeCBTxAm9yHJn76KcGbyxXFYPfZCyYoom1Oe/Nu8JjkWQMmYGiGNaIhG6888Edg==", "id"=>"4"}
+  Rendered proposals/update.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/proposals/4/edit" for 99.170.208.95 at 2019-12-06 22:47:24 +0000
+Cannot render console from 99.170.208.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProposalsController#edit as HTML
+  Parameters: {"authenticity_token"=>"oET3wzTBhHslHB2BUyVtOIbq2X++FUBEjKFLs5hmxkqGOQ+dQtrvVkxmdXJIuDoHHrQxbYvXwZoe8T3myTXbgA==", "state"=>"3", "id"=>"4"}
+  [1m[35mProposal Load (0.1ms)[0m  SELECT  "proposals".* FROM "proposals" WHERE "proposals"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "proposals" SET "number_abstain" = ?, "updated_at" = ? WHERE "proposals"."id" = ?  [["number_abstain", 2], ["updated_at", "2019-12-06 22:47:24.205164"], ["id", 4]]
+  [1m[36m (4.8ms)[0m  [1mcommit transaction[0m
+Redirected to https://0c5212ec2b1048d5abcb10bc9eda5059.vfs.cloud9.us-east-2.amazonaws.com/proposals
+Completed 302 Found in 9ms (ActiveRecord: 5.1ms)
+
+
+Started GET "/proposals" for 99.170.208.95 at 2019-12-06 22:47:24 +0000
+Cannot render console from 99.170.208.95! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProposalsController#index as HTML
+  [1m[35mProposal Load (0.1ms)[0m  SELECT "proposals".* FROM "proposals" WHERE "proposals"."status" = ?  [["status", 0]]
+  Rendered proposals/index.html.haml within layouts/application (3.7ms)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.2ms)

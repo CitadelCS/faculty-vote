@@ -16,8 +16,13 @@ class AuthenticationController < ApplicationController
   end
   
   def create
+    session[:user_id] = '0'
     if (User.exists?(email: params[:email], password: params[:pwd]))
-      redirect_to proposals_path
+      @user = User.where(email: params[:email], password: params[:pwd])
+      session[:user_id] = @user.ids
+    end
+    if session[:user_id] != '0'
+        redirect_to '/proposals'
     else
       redirect_to "/"
     end
@@ -29,6 +34,7 @@ class AuthenticationController < ApplicationController
   end
   
   def index 
+    session[:user_id] = '0'
   end
   
   

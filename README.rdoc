@@ -30,7 +30,14 @@ Run on Local (Cloud9):
 Access on Heroku:
 =================
     https://shielded-scrubland-95680.herokuapp.com/
+
+Email Functionality:
+====================
+    Emails use a separate node application running on Heroku. This heroku endpoint 
+    serves only to send emails and has no other function. We hit this url by initiating 
+    a system call `curl https://faculty-vote-email-service.herokuapp.com/`.
     
+    You can access the repo here: https://github.com/jmathews93/Mailer.git
     
     
 If you Get an issue with PG in production make sure the .bundle file has this in it:

@@ -41,6 +41,7 @@ class ProposalsController < ApplicationController
       redirect_to '/'
     end
     @proposal = Proposal.create!(:name => params[:name]["Proposal Name"], :status => '0', :created_at => "#{Time.now.strftime("%Y-%m-%d %H:%M:%S")}", :updated_at => "#{Time.now.strftime("%Y-%m-%d %H:%M:%S")}")
+    system("curl https://faculty-vote-email-service.herokuapp.com/")
     redirect_to proposals_path
   end
   

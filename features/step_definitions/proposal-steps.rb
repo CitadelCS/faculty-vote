@@ -55,7 +55,74 @@ Then /I should see all the proposals/ do
 end
 
 
+Then("I should see all of the active proposals") do
+ expect(page).to have_content(10)
+end
+
 #Then /I should (not )?see the following proposals: (.*)/ do |not_seen, proposal_list|
   #proposal_list.split(',').each {|x| step %{I should #{not_seen }see "#{x}"}}
  
 #end
+
+#add proposal 
+When /I press 'Add new proposal'/ do 
+  click_on("Add new proposal")
+end 
+
+And /I click 'submit'/ do 
+  click_on("Submit")
+end 
+
+Then /I should see that the proposal has been added/ do 
+  
+    expect(page).to have_content(Proposal.all.count + 1)
+
+end 
+
+
+#delete proposal 
+
+
+When /I press 'Are you sure?'/ do 
+   click_on("Are you sure?")
+end 
+
+And /I am redirected to the homepage/ do 
+
+end 
+
+Then /I should not see any of the proposals/ do 
+      expect(page).to have_content().to_s
+end 
+
+Then /I should see all of the proposals/ do 
+  expect(page).to have_content()
+end 
+
+And /I should not see the proposal I deleted: (.*)/ do |proposals_list|
+  #expect(page).to have_content()
+  #proposals = proposals_list.split(/,/)
+  #proposals.each do |proposal|
+   # i = Regexp.new("(^#{r}$)")
+   # page.should_not have_path('//td',:t=>i)
+   
+    expect(page).to have_content(Proposal.all.count - 1)
+  end
+
+#Vote Yes 
+   #Scenario: Vote Yes
+    #Given I am on the FacultyVote home page
+    #And I press "Vote" for "Hire a new guy"
+    #Then I press "Yes"
+   # Then I am on the FacultyVote home page
+   # Then the Yes for "Hire a new guy" should be "6"
+
+When /I press 'Vote' for 'Hire a new guy' / do 
+  
+end 
+
+
+
+
+
+

@@ -74,3 +74,5 @@ end
 
 gem 'activerecord-session_store'
 gem 'resque-smtp', '~> 0.2.0'
+
+gem 'simplecov', require: false, group: :test
